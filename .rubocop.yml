@@ -1,0 +1,31 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+AllCops:
+  SuggestExtensions: false
+  TargetRubyVersion: 3.0
+  Exclude:
+    - vendor/**/*
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 80
+
+Style/Documentation:
+  Include:
+    - lib/**/*.rb
+
+Style/DocumentationMethod:
+  Include:
+    - lib/**/*.rb
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
