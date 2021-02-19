@@ -4,8 +4,10 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'activesupport'
 gem 'pry-byebug'
+gem 'puma'
+gem 'rails'
 gem 'rake'
 gem 'rubocop-shopify'
+gem 'sqlite3'
 gem 'yard'

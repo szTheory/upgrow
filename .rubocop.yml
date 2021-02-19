@@ -5,6 +5,7 @@ AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 3.0
   Exclude:
+    - test/dummy/db/schema.rb
     - vendor/**/*
 
 Bundler/OrderedGems:
