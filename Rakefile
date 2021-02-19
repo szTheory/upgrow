@@ -2,17 +2,12 @@
 
 require 'bundler/setup'
 require 'bundler/gem_tasks'
-require 'rake/testtask'
 
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.warning = true
-  t.verbose = true
-end
+APP_RAKEFILE = File.expand_path('test/dummy/Rakefile', __dir__)
+load('rails/tasks/engine.rake')
 
 require 'rubocop/rake_task'
 
 RuboCop::RakeTask.new
 
-task default: [:test, :rubocop]
+task default: ['db:setup', 'app:test:all', 'rubocop']
