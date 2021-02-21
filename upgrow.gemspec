@@ -18,4 +18,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*', 'Rakefile', 'README.md']
   spec.test_files = Dir['test/**/*.rb']
   spec.require_paths = ['lib']
+
+  spec.add_dependency('activemodel', '~> 6.1')
 end

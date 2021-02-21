@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'test_helper'
+
+require 'rails_helper'
 require 'webdrivers/chromedriver'
 require 'action_dispatch/system_testing/server'
 

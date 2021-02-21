@@ -1,0 +1,14 @@
+<% content_for :page_title, 'Edit Article' %>
+
+<h1 class="title is-1">Edit Article</h1>
+
+<%= form_with model: @input, method: :patch, url: article_path(params[:id]), builder: ApplicationHelper::BulmaFormBuilder, errors: @errors do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_area :body %>
+
+  <%= form.submit 'Update' %>
+<% end %>
+
+<div class="content">
+  <%= link_to 'Back', article_path(params[:id]) %>
+</div>

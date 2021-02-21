@@ -1,0 +1,18 @@
+<% content_for :page_title, @article.title %>
+
+<h1 class="title is-1"><%= @article.title %></h1>
+
+
+<div class="content">
+  <%= simple_format @article.body %>
+</div>
+
+<div class="buttons">
+  <%= link_to 'Edit', edit_article_path(@article.id), class: 'button' %>
+  <%= button_to 'Destroy', article_path(@article.id), method: :delete,
+    data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
+</div>
+
+<div class="content">
+  <%= link_to 'Back', articles_path %>
+</div>

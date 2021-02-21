@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     upgrow (0.0.1)
+      activemodel (~> 6.1)
 
 GEM
   remote: https://rubygems.org/

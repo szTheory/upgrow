@@ -1,0 +1,21 @@
+<% content_for :page_title, 'Articles' %>
+
+<h1 class="title is-1">Articles</h1>
+
+<% @articles.each do |article| %>
+  <div class="content">
+    <h2 class="title is-2">
+      <%= link_to article.title, article_path(article.id) %>
+    </h2>
+
+    <%= simple_format article.body %>
+  </div>
+<% end %>
+
+<% if @articles.none? %>
+  <div class="content">
+    <p>There are no Articles just yet.</p>
+  </div>
+<% end %>
+
+<%= link_to 'New Article', new_article_path, class: 'button' %>

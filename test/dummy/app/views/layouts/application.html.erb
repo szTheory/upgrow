@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
-    <title>Dummy</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      <% if content_for?(:page_title) %>
+        <%= content_for :page_title %> -
+      <% end %>
+
+      Dummy
+    </title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%=
+      stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.css',
+        media: :all,
+        integrity: 'sha256-67AR2JVjhMZCLVxapLuBSMap5RrXbksv4vlllenHBSE=',
+        crossorigin: 'anonymous'
+    %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+
+    <section class="section">
+      <div class="container">
+        <% if notice %>
+          <div class="notification is-success"><%= notice %></div>
+        <% elsif alert %>
+          <div class="notification is-warning"><%= alert %></div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
