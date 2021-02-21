@@ -14,7 +14,8 @@ module Upgrow
     end
 
     test 'it does not respond to []=' do
-      refute ImmutableStruct.new(:user, :post).new.respond_to?(:[]=)
+      struct = ImmutableStruct.new(:user).new(user: 'volmer')
+      refute struct.respond_to?(:[]=)
     end
 
     test 'it does not allow members to be mutated' do
@@ -24,6 +25,16 @@ module Upgrow
 
       refute struct.respond_to?(:user=)
       refute struct.respond_to?(:post=)
+    end
+
+    test '.new requires all members' do
+      struct_class = ImmutableStruct.new(:user, :post)
+
+      error = assert_raises(KeyError) do
+        struct_class.new(user: 'volmer')
+      end
+
+      assert_equal 'key not found: :post', error.message
     end
   end
 end

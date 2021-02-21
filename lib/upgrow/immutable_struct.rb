@@ -22,5 +22,14 @@ module Upgrow
     end
 
     undef []=
+
+    # Initializes a new Immutable Struct with the given member values.
+    #
+    # @param args [Hash<Symbol, Object>] the list of values for each member of
+    #   the Immutable Struct.
+    def initialize(**args)
+      members.each { |key| args.fetch(key) }
+      super(**args)
+    end
   end
 end
