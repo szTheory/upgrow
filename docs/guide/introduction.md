@@ -1,8 +1,9 @@
-<!--
-  # @title Upgrow
--->
-
-# Upgrow
+---
+tags: guide
+layout: page
+title: Introduction
+date: 2021-02-01
+---
 
 Ruby on Rails is the framework of choice for web apps at Shopify. It is an
 opinionated stack for quick and easy development of apps that need standard
@@ -24,22 +25,3 @@ adopt patterns that are proven to make code more sustainable long term, and
 codebases easier to maintain and extend. We will recommend a set of abstractions
 and practices that are simple, yet powerful in organizing code in Rails apps in
 a way that allows fast-growing apps to remain easy to change.
-
-## The Upgrow Guide
-
-Visit [https://upgrow.shopify.io](https://upgrow.shopify.io) to learn more about
-creating a sustainable architecture for your Rails apps.
-
-## The Upgrow Gem
-
-This project offers a Ruby gem to make it easier for Rails apps to adopt the
-sustainable architecture proposed in the Upgrow Guide. To install, add this line
-to your application's Gemfile and run `bundle install`:
-
-```ruby
-gem 'upgrow'
-```
-
-## License
-
-For copyright and licensing please refer to `LICENSE.txt`.

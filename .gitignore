@@ -1,3 +1,4 @@
+.yardoc/
 pkg/
 test/dummy/db/*.sqlite3
 test/dummy/db/*.sqlite3-*
