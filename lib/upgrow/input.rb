@@ -26,7 +26,7 @@ module Upgrow
   # that task. By leveraging validation utilities from Active Model, Input
   # objects can not only perform the same validations as Records but also
   # seamlessly integrate with view helpers such as Rails form builders.
-  class Input
-    include ActiveModel::Model
+  class Input < ImmutableStruct
+    include ActiveModel::Validations
   end
 end

@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @input = ArticleInput.new
+    @input = ArticleInput.new(title: nil, body: nil)
   end
 
   def edit
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @input = ArticleInput.new(article_params)
+    @input = ArticleInput.new(**article_params.to_h.symbolize_keys)
 
     CreateArticleAction.new.perform(@input)
       .and_then do |article|
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @input = ArticleInput.new(article_params)
+    @input = ArticleInput.new(**article_params.to_h.symbolize_keys)
 
     UpdateArticleAction.new.perform(params[:id], @input)
       .and_then do |article|
