@@ -52,7 +52,7 @@
   <h1 class="title is-1">The Missing Pieces</h1>
 
   <p>Once well defined roles are chosen for each layer of Rails, it becomes obvious that there is no answer about what category of objects should handle app-specific business logic. Controllers are responsible for HTTP, views manage formatting and presentation, and records deal with persistence. There is a big gap between these layers where the actual core piece of the app should live, agnostic of communication or databases.</p>
-<p><img src="../images/diagram_2.jpg" alt="Diagram 2"></p>
+<p><img src="/images/diagram_2.jpg" alt="Diagram 2"></p>
 <p>The cloud with questions marks above is exactly where the hard work of designing a good Rails architecture sits. That is the brain of the app, beyond simply transporting data from the database to the web via HTTP and markups. That is where the rules for permissions, validations, user flows, collaboration with other services, and everything that makes the app unique and useful to people. That is the app’s business logic.</p>
 <p>The requirements for how business logic should be structured is familiar: there should be small objects that collaborate with each other through exchange of messages. Each object should have a single responsibility, a limited and concise public interface.</p>
 <p>Moreover, these objects should not be coupled with Rails. The layers from the framework are already assigned other tasks related to persistence, presentation, and transport. The business logic should be decoupled from external libraries as much as possible, as it specializes in the universe the app is featured in.</p>
@@ -644,7 +644,7 @@ end
 end
 </code></pre>
 <p>The controller now has the single responsibility of abstracting away HTTP concerns, such as extracting data from request parameters and forwarding them to the proper Actions. According to the Result returned, the controller then crafts the appropriate HTTP response. Controllers don’t hold any logic regarding validations, persistence, or anything else behind an Action.</p>
-<p><img src="../images/diagram_3.jpg" alt="Diagram 3"></p>
+<p><img src="/images/diagram_3.jpg" alt="Diagram 3"></p>
 <p>The combination of these additional layers of Actions, Results, Inputs, Models, and Repositories allows apps to have small objects with specific roles handling the business logic. The default Rails objects are specialized in single responsibilities, and the resulting architecture is one which requests are handled by a network of objects collaborating between themselves. These objects are easy to understand, test, and most importantly, much easier to change.</p>
 
 </div>

@@ -52,7 +52,7 @@
   <h1 class="title is-1">Code Smells in Rails Apps</h1>
 
   <p>A standard Rails app responds to incoming requests by exchanging messages down a stack of framework layers. From the Routes level, a request is delegated to a Controller action that processes the request and returns an HTTP response. By default the stack can be simplified as the diagram below.</p>
-<p><img src="../images/diagram_1.jpg" alt="Diagram 1"></p>
+<p><img src="/images/diagram_1.jpg" alt="Diagram 1"></p>
 <p>Auxiliary frameworks such as Active Job, Action Mailer, and Views can be called by controller actions as needed.</p>
 <p>This stack is a perfect fit for most features, as long as their business logic is simple and lightweight. In a real world scenario, where real people use such apps, this is never the case. Processing requests and crafting responses involves many steps, with preconditions to be checked, conditional statements, validations, and multiple combinations of different responses. The stack above does not bring answers to most of these, which leads to smells showing up across the codebase.</p>
 <p>The lack of proper design for organizing business logic produces some very common smells in Rails apps. The list below is just the most common ones.</p>
